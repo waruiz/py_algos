@@ -28,3 +28,26 @@ class BinarySearch:
             return self.__recurse(middle_index + 1, high_index)
         
         return -1
+    
+    def get_index_iteratively(self, my_list, value):
+        if len(my_list) == 0:
+            return -1
+        
+        self.__my_list = my_list
+        self.__value = value
+
+        return self.__iterate(0, len(self.__my_list) - 1)
+    
+    def __iterate(self, low_index, high_index):
+        while low_index <= high_index:
+            middle_index = (low_index + high_index) // 2
+            middle_value = self.__my_list[middle_index]
+
+            if self.__value == middle_value:
+                return middle_index
+            elif self.__value < middle_value:
+                high_index = middle_index - 1
+            elif self.__value > middle_value:
+                low_index = middle_index + 1
+        
+        return -1
