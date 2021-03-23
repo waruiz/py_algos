@@ -28,15 +28,16 @@ class BinarySearch:
         return self.__recurse(0, len(self.__my_list) - 1)
     
     def __recurse(self, low_index, high_index):
-        middle_index = (low_index + high_index) // 2
-        middle_value = self.__my_list[middle_index]
+        if low_index <= high_index:
+            middle_index = (low_index + high_index) // 2
+            middle_value = self.__my_list[middle_index]
 
-        if self.__value == middle_value:
-            return middle_index
-        elif self.__value < middle_value and middle_index - 1 >= low_index:
-            return self.__recurse(low_index, middle_index - 1)
-        elif self.__value > middle_value and middle_index + 1 <= high_index:
-            return self.__recurse(middle_index + 1, high_index)
+            if self.__value == middle_value:
+                return middle_index
+            elif self.__value < middle_value:
+                return self.__recurse(low_index, middle_index - 1)
+            elif self.__value > middle_value:
+                return self.__recurse(middle_index + 1, high_index)
         
         return -1
     
