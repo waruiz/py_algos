@@ -4,6 +4,9 @@ class BinarySearch:
     __my_list = []
     __value = None
 
+    # TIME: log(n) == "logarithmic" because, at most, will check everything
+    # # on either side (i.e. half list of previous iteration)
+    # SPACE: 1 == "constant" because using input list, no extra space
     def get_index_recursively(self, my_list, value):
         if len(my_list) == 0:
             return -1
