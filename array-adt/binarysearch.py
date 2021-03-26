@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 class BinarySearch:
+    # self.__recurse uses a stack, each time the method calls itself, whereas
+    # # self.__iterate does not; as such, if possible, favor iterative approach
     __my_list = []
     __value = None
 

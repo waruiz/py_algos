@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
-from arrays import BinarySearch
+from binarysearch import BinarySearch
 
 class TestArraysBinarySearchRecursively(unittest.TestCase):
     def setUp(self):
